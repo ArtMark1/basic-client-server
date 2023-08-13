@@ -15,7 +15,7 @@ function startServer() {
 
 function handleRequest(request, response) {
   if (request.url == "/favicon.ico") {
-    const icon = readFileSync("favicon.ico");
+    const icon = readFileSync("public/favicon.ico");
     response.end(icon);
   } else {
     response.end("hello client");
