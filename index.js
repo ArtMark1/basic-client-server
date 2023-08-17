@@ -14,20 +14,15 @@ function startServer() {
 }
 
 function handleRequest(request, response) {
-  if (request.url == "/favicon.ico") {
-    const icon = readFileSync("public/favicon.ico");
-    response.end(icon);
-  } else if (request.url == "/" || request.url == "/index.html") {
-    const html = readFileSync("public/index.html");
-    response.end(html);
-  } else if (request.url == "/style.css") {
-    const css = readFileSync("public/style.css");
-    response.end(css);
-  } else if (request.url == "/script.js") {
-    const js = readFileSync("public/script.js");
-    response.end(js);
+  if (request.url == "/") {
+    response.end(readFileSync("public/index.html"));
   } else {
-    response.end("hello client");
+    try {
+      response.end(readFileSync(`public${request.url}`));
+    } catch {
+      response.end(`<p>404</p>`);
+    }
   }
+
   console.log("request: ", request.url);
 }
