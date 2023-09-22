@@ -1,0 +1,62 @@
+@keyframes bounce {
+
+  0%,
+  20%,
+  60%,
+  100% {
+    transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+
+.reg-form {
+  background: #fdfdfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.101);
+}
+
+input[type=submit] {
+  background-color: #c3c3c3;
+}
+
+input[type=submit]:hover {
+  animation: bounce 1s;
+  cursor: pointer;
+}
+
+input[type=submit]:focus {
+  transition: all 0.2s;
+  color: #212529;
+  background-color: #fff;
+  border-color: #bdbdbd;
+  outline: 0;
+}
+
+input:focus {
+  transition: all 0.3s;
+  color: #212529;
+  background-color: #fff;
+  border-color: #bdbdbd;
+  outline: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.156);
+}

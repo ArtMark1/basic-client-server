@@ -1,0 +1,19 @@
+  main {
+    padding: 30px;
+    text-align: center;
+  }
+
+  .profile {
+    width: max-content;
+    margin: auto;
+  }
+
+  .bio {
+    width: 400px;
+    margin-bottom: 50px;
+  }
+
+  .log-out {
+    width: 100px;
+    height: 30px;
+  }

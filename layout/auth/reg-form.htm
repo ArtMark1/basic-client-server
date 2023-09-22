@@ -1,0 +1,55 @@
+<!-- <link rel="stylesheet" href="reg-form.css"> -->
+
+<div class="reg-group">
+  <button class="register">Register</button>
+
+  <div class="glass" hidden>
+    <div class="modal">
+      <form action="javascript:" class="reg-form">
+        <input class='input' type="text" placeholder="Your name">
+        <input class='input' type="email" placeholder="Your email">
+        <input class='input' type="password" placeholder="Your password">
+        <input class='input' type="password" placeholder="Repeat password">
+        <input type="submit" value="Register">
+        <input type="button" value="Cancel">
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .glass {
+    position: fixed;
+    inset: 0;
+    background-color: #0005;
+  }
+
+  .modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .reg-form {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+</style>
+
+<script>
+  const regBtn = document.querySelector('.register');
+  const glass = document.querySelector('.glass');
+
+  regBtn.onclick = () => glass.hidden = false;
+
+  glass.onclick = (e) => {
+    if (e.target == glass || e.target.value == 'Cancel') glass.hidden = true;
+  };
+
+
+</script>

@@ -1,0 +1,53 @@
+<div class="log-form">
+  <button class="login">Log in</button>
+
+  <div class="glass">
+    <div class="modal">
+
+      <form action="javascript:" class="form">
+        <input type="email" placeholder="Your email">
+        <input type="password" placeholder="Your password">
+        <input type="submit" value="Log in">
+        <input type="button" value="Cancel">
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .glass {
+    position: fixed;
+    background-color: #0005;
+    inset: 0;
+  }
+
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: max-content;
+
+  }
+</style>
+
+<script>
+  const login = document.querySelector('.login');
+  const glass = document.querySelector('.glass');
+
+  login.onclick = () => glass.hidden = false;
+
+  glass.onclick = (e) => {
+    if (e.target == glass || e.target.value == 'Cancel') glass.hidden = true;
+  }
+</script>
